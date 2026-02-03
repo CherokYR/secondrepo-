@@ -1,0 +1,23 @@
+int LED = 2;
+// the setup function runs once when you press reset or power the board
+void setup() {
+  pinMode(LED, OUTPUT);
+  pinMode(A0, INPUT);
+  Serial.begin(9600);
+}
+
+// the loop function runs over and over again forever
+void loop() {
+  int LIGHTS = analogRead(A0);
+  Serial.println(LIGHTS);
+
+  if(LIGHTS > 400)
+  {
+    digitalWrite(LED, HIGH);
+  }
+  else
+  {
+    digitalWrite(LED, LOW);
+  }
+  
+}
